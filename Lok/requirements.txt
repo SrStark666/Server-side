@@ -1,0 +1,7 @@
+colorama
+sockets
+requests
+getpass
+datetime
+subprocess
+cx_Freeze
