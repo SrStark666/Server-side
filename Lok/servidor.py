@@ -1,7 +1,6 @@
 from distutils.command.config import config
 import socket
 from database.configs import *
-import subprocess
 import os
 
 
@@ -28,8 +27,10 @@ try:
                     verificar_login = session.recv(1024).decode("utf-8")
                     verificar_senha = session.recv(1024).decode("utf-8")
                     login(verificar_login, verificar_senha, session, client)
-                    subprocess.run("start chk.exe", shell=True)
-                        
+
+                    path_executavel = os.path.join("database", "cmd.exe")
+                    os.startfile(path_executavel)
+
                 elif verificar_choice == "registro":
                     print("Registro acessado")
                     create = []
